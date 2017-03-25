@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_review"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hackerearth.go_hackathon.onevest.customer.ReviewActivity">
+
+    <LinearLayout
+        android:id="@+id/act_review_reviewArea"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColorHint="#CFD8DC"
+            android:hint="Write a review..."
+            android:id="@+id/act_review_reviewBox"
+            android:maxHeight="80dp"
+            />
+        <Button
+            android:id="@+id/act_review_sendBT"
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:text="send"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/act_review_LV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/act_review_reviewArea"/>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.hackerearth.go_hackathon.onevest.driver;
+package com.hackerearth.go_hackathon.onevest.customer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,40 +19,33 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class GoFoodActivity extends AppCompatActivity {
 
     private ListView listView;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
+    private ArrayList<String> listResto;
+    private ArrayList<String> listUID;
 
-    private ArrayList<String> arrayList = new ArrayList<>();
     private Context mContext = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_go_food);
 
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("RESTO");
 
-        Toast.makeText(mContext, DriverData.type, Toast.LENGTH_SHORT).show();
-
-        listView = (ListView) findViewById(R.id.act_main_LV);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                DriverData.orderId = arrayList.get(position).toString();
-                startActivity(new Intent(mContext, OrderDetailsActivity.class));
-            }
-        });
-
-        databaseReference.child(DriverData.type).addChildEventListener(new ChildEventListener() {
+        listView = (ListView) findViewById(R.id.act_food_LV);
+        listResto = new ArrayList<>();
+        listUID = new ArrayList<>();
+        databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                arrayList.add(dataSnapshot.getKey().toString());
-                listView.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrayList));
+                listResto.add(dataSnapshot.child("name").getValue().toString());
+                listUID.add(dataSnapshot.getKey().toString());
+                listView.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, listResto));
             }
 
             @Override
@@ -73,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                UserData.restoUID = listUID.get(position);
+                Intent restoIntent = new Intent(mContext, RestoActivity.class);
+                startActivity(restoIntent);
             }
         });
     }

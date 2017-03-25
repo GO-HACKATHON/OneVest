@@ -11,4 +11,8 @@ public class UserData {
     static String email = "";
     static String orderId = "";
     static String driverName = "";
+    static String restoUID = "";
+    static String menuName = "";
+    static String reviewerName = "";
+    static String review = "";
 }

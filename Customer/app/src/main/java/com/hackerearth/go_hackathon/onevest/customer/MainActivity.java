@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         rideBT.setOnClickListener(this);
         carBT.setOnClickListener(this);
+        foodBT.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.act_main_foodBT:
+                startActivity(new Intent(mContext, GoFoodActivity.class));
                 break;
         }
     }
