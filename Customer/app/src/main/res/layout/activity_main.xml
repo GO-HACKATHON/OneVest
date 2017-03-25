@@ -13,10 +13,10 @@
     tools:context="com.hackerearth.go_hackathon.onevest.customer.MainActivity">
 
     <Button
-        android:id="@+id/act_main_bikeBT"
+        android:id="@+id/act_main_rideBT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="go-bike"/>
+        android:text="go-ride"/>
     <Button
         android:id="@+id/act_main_carBT"
         android:layout_width="match_parent"

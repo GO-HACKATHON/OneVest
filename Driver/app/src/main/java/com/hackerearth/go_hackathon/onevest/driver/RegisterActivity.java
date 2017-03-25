@@ -1,4 +1,4 @@
-package com.hackerearth.go_hackathon.onevest.customer;
+package com.hackerearth.go_hackathon.onevest.driver;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,7 +23,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText emailET, nameET, phoneET, passwordET;
+    private EditText emailET, nameET, phoneET, numberET ,passwordET;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     private Button loginBT, regBT;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
@@ -41,9 +45,12 @@ public class RegisterActivity extends AppCompatActivity {
         nameET = (EditText) findViewById(R.id.act_reg_nameET);
         phoneET = (EditText) findViewById(R.id.act_reg_phoneET);
         passwordET = (EditText) findViewById(R.id.act_reg_passwordET);
+        numberET = (EditText) findViewById(R.id.act_reg_numberET);
 
         loginBT = (Button) findViewById(R.id.act_reg_loginBT);
         regBT = (Button) findViewById(R.id.act_reg_regBT);
+
+        radioGroup = (RadioGroup) findViewById(R.id.act_reg_RG);
 
         loginBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +70,17 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = emailET.getText().toString();
                 final String name = nameET.getText().toString();
                 final String phone = phoneET.getText().toString();
+                final String number = numberET.getText().toString();
                 String pass = passwordET.getText().toString();
+
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+
+                if (radioButton.getText().toString().equals("GO-RIDE")) {
+                    DriverData.type = "RIDE";
+                } else {
+                    DriverData.type = "CAR";
+                }
 
                 mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -75,9 +92,11 @@ public class RegisterActivity extends AppCompatActivity {
                         }
 
                         String UID = mAuth.getCurrentUser().getUid().toString();
-                        databaseReference.child(ChildData.customer).child(UID).child(ChildData.email).setValue(email);
-                        databaseReference.child(ChildData.customer).child(UID).child(ChildData.name).setValue(name);
-                        databaseReference.child(ChildData.customer).child(UID).child(ChildData.phone).setValue(phone);
+                        databaseReference.child(ChildData.driver).child(UID).child(ChildData.email).setValue(email);
+                        databaseReference.child(ChildData.driver).child(UID).child(ChildData.name).setValue(name);
+                        databaseReference.child(ChildData.driver).child(UID).child(ChildData.phone).setValue(phone);
+                        databaseReference.child(ChildData.driver).child(UID).child(ChildData.number).setValue(number);
+                        databaseReference.child(ChildData.driver).child(UID).child(ChildData.type).setValue(DriverData.type);
 
                         progressDialog.dismiss();
                         Toast.makeText(mContext, "Successfully Registered", Toast.LENGTH_SHORT).show();
