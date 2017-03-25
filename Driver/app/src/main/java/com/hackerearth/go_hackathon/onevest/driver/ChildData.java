@@ -6,6 +6,8 @@ package com.hackerearth.go_hackathon.onevest.driver;
 
 public class ChildData {
     static String driver = "DRIVER";
+    static String customer = "CUSTOMER";
+    static String orderBy = "ORDER BY";
     static String email = "email";
     static String name = "name";
     static String phone = "phone";

@@ -11,4 +11,9 @@ public class DriverData {
     static String email = "";
     static String type = "";
     static String number = "";
+    static String orderId = "";
+
+    static String custUID = "";
+    static String custName = "";
+    static String custPhone = "";
 }

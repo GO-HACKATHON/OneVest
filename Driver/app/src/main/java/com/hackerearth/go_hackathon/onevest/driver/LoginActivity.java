@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Driver;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailET, passwordET;
@@ -71,11 +73,27 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressDialog.dismiss();
-                                startActivity(new Intent(mContext, MainActivity.class));
-                                Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
-                                Log.d("LOGIN: ", "SUCCESS");
-                                finish();
+                                DriverData.UID = mAuth.getCurrentUser().getUid().toString();
+                                databaseReference.child(ChildData.driver).child(DriverData.UID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        DriverData.email = dataSnapshot.child(ChildData.email).getValue().toString();
+                                        DriverData.name = dataSnapshot.child(ChildData.name).getValue().toString();
+                                        DriverData.phone = dataSnapshot.child(ChildData.phone).getValue().toString();
+                                        DriverData.number = dataSnapshot.child(ChildData.number).getValue().toString();
+                                        DriverData.type = dataSnapshot.child(ChildData.type).getValue().toString();
+                                        progressDialog.dismiss();
+                                        startActivity(new Intent(mContext, MainActivity.class));
+                                        Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
+                                        Log.d("LOGIN: ", "SUCCESS");
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+
+                                    }
+                                });
                             }
                         });
             }

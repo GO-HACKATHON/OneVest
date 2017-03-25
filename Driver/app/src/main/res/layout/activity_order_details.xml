@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_go_bike"
+    android:id="@+id/activity_order_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.hackerearth.go_hackathon.onevest.customer.GoRideActivity">
+    android:gravity="center"
+    tools:context="com.hackerearth.go_hackathon.onevest.driver.OrderDetailsActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -43,10 +43,23 @@
         android:textSize="24sp"
         android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/act_ride_orderBT"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="order"/>
-
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/act_orderDetails_acceptBT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="accept"
+            android:layout_marginRight="8dp"/>
+        <Button
+            android:id="@+id/act_orderDetails_rejectBT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="reject"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
 </LinearLayout>

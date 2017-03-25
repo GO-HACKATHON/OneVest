@@ -17,7 +17,9 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".GoRideActivity"></activity>
+        <activity android:name=".GoRideActivity" />
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

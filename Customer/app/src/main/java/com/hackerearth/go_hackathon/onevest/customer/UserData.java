@@ -9,4 +9,6 @@ public class UserData {
     static String UID = "";
     static String phone = "";
     static String email = "";
+    static String orderId = "";
+    static String driverName = "";
 }
