@@ -19,7 +19,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".GoRideActivity" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".GoCarActivity"></activity>
     </application>
 
 </manifest>

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foodBT = (Button) findViewById(R.id.act_main_foodBT);
 
         rideBT.setOnClickListener(this);
+        carBT.setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.act_main_carBT:
+                startActivity(new Intent(mContext, GoCarActivity.class));
                 break;
 
             case R.id.act_main_foodBT:

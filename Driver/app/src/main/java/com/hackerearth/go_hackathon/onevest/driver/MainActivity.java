@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        databaseReference.child("RIDE").addChildEventListener(new ChildEventListener() {
+        databaseReference.child(DriverData.type).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 arrayList.add(dataSnapshot.getKey().toString());
