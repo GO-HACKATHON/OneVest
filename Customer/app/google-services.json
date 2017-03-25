@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "101989818459",
+    "firebase_url": "https://onevest-gohackathon.firebaseio.com",
+    "project_id": "onevest-gohackathon",
+    "storage_bucket": "onevest-gohackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101989818459:android:1c63526d94df06ff",
+        "android_client_info": {
+          "package_name": "com.hackerearth.go_hackathon.onevest.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101989818459-murbdi27lti3cl08aaalumep8ji5ljmi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackerearth.go_hackathon.onevest.customer",
+            "certificate_hash": "dd0050542e6332b31b82e44cd2efb6f0cba612f3"
+          }
+        },
+        {
+          "client_id": "101989818459-5euvp7h9p0bfqgbl3527eplpk414m8pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2FkSpNxYtJfw5vCgRVzBT2g8zv0LuqEg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101989818459-5euvp7h9p0bfqgbl3527eplpk414m8pv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
