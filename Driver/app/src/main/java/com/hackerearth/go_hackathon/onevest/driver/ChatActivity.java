@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private LinearLayout linearLayout;
     private ScrollView scrollView;
-    private Button sendBT;
+    private ImageButton sendBT;
     private EditText messageBoxET;
 
     private DatabaseReference databaseReference;
@@ -45,7 +46,7 @@ public class ChatActivity extends AppCompatActivity {
         linearLayout = (LinearLayout) findViewById(R.id.act_chat_messageLL);
         scrollView = (ScrollView) findViewById(R.id.act_chat_SV);
         messageBoxET = (EditText) findViewById(R.id.act_chat_messageBox);
-        sendBT = (Button) findViewById(R.id.act_chat_sendBT);
+        sendBT = (ImageButton) findViewById(R.id.act_chat_sendBT);
 
         sendBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,7 @@ public class ChatActivity extends AppCompatActivity {
                 if (!message.equals("")) {
                     databaseReference.child("MESSAGES").child(DriverData.orderId).child(DriverData.name).child("message").setValue(message);
                     addMessageBox("You:-\n" + message, 1);
+                    messageBoxET.setText("");
                 }
             }
         });
@@ -78,7 +80,19 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                if (DriverData.custName.equals(dataSnapshot.getKey().toString())) {
+                    databaseReference.child("MESSAGES").child(DriverData.orderId).child(DriverData.custName).child("message").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            addMessageBox(DriverData.custName + ":\n" + dataSnapshot.getValue().toString(), 2);
+                        }
 
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
             }
 
             @Override

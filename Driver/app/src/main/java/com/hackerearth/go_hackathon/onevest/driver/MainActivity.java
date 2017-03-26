@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        Toast.makeText(mContext, DriverData.type, Toast.LENGTH_SHORT).show();
-
         listView = (ListView) findViewById(R.id.act_main_LV);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

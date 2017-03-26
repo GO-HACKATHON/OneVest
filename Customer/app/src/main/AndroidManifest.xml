@@ -8,22 +8,34 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".GoRideActivity" />
+        <activity
+            android:label="Register"
+            android:name=".RegisterActivity" />
+        <activity
+            android:label="GO-JEK" android:name=".MainActivity" />
+        <activity
+            android:label="GO-RIDE"
+            android:name=".GoRideActivity" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".ChatActivity" />
-        <activity android:name=".GoCarActivity" />
-        <activity android:name=".GoFoodActivity" />
+        <activity
+            android:label="Order" android:name=".ChatActivity" />
+        <activity
+            android:label="GO-CAR" android:name=".GoCarActivity" />
+        <activity
+            android:label="GO-FOOD"
+            android:name=".GoFoodActivity" />
         <activity android:name=".RestoActivity" />
-        <activity android:name=".ReviewActivity"></activity>
+        <activity
+            android:label="Review"
+            android:name=".ReviewActivity"></activity>
     </application>
 
 </manifest>

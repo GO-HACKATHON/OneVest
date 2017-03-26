@@ -68,7 +68,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
                                                 databaseReference.child("ORDER").child(DriverData.orderId).child("ORDER TYPE").setValue(DriverData.type);
                                                 databaseReference.child("ORDER").child(DriverData.orderId).child("ORDER BY").setValue(DriverData.custName);
                                                 databaseReference.child("ORDER").child(DriverData.orderId).child("DRIVER").setValue(DriverData.name);
-                                                startActivity(new Intent(mContext, CommunicationActivity.class));
+                                                startActivity(new Intent(mContext, ChatActivity.class));
                                                 finish();
                                             }
                                         });

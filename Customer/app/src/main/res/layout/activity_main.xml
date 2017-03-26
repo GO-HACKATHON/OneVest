@@ -11,21 +11,78 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context="com.hackerearth.go_hackathon.onevest.customer.MainActivity">
+    
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/gojek_logo"
+        android:scaleType="centerCrop"/>
 
-    <Button
-        android:id="@+id/act_main_rideBT"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="go-ride"/>
-    <Button
-        android:id="@+id/act_main_carBT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="go-car"/>
-    <Button
-        android:id="@+id/act_main_foodBT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="go-food"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_motorcycle"
+            android:background="@android:color/transparent"/>
+        <Button
+            android:id="@+id/act_main_rideBT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="go-ride"
+            android:textSize="24sp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_drive"
+            android:background="@android:color/transparent"/>
+        <Button
+            android:id="@+id/act_main_carBT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="go-car"
+            android:textSize="24sp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_local_dining"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/act_main_foodBT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="go-food"
+            android:textSize="24sp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 </LinearLayout>

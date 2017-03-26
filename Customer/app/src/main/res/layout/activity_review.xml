@@ -20,11 +20,14 @@
             android:id="@+id/act_review_reviewBox"
             android:maxHeight="80dp"
             />
-        <Button
+        <ImageButton
             android:id="@+id/act_review_sendBT"
             android:layout_width="72dp"
             android:layout_height="48dp"
-            android:text="send"/>
+            android:text="send"
+            android:src="@drawable/ic_send"
+            android:scaleType="center"
+            android:background="@android:color/transparent"/>
     </LinearLayout>
 
     <ListView

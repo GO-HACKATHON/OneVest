@@ -64,7 +64,7 @@ public class GoCarActivity extends AppCompatActivity {
                     @Override
                     public void onChildRemoved(DataSnapshot dataSnapshot) {
                         progressDialog.dismiss();
-                        startActivity(new Intent(mContext, OrderActivity.class));
+                        startActivity(new Intent(mContext, ChatActivity.class));
                         finish();
                     }
 

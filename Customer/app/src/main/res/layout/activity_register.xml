@@ -4,13 +4,23 @@
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.hackerearth.go_hackathon.onevest.customer.RegisterActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/gojek_putih"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
         android:gravity="center">
 
         <TextView
@@ -44,28 +54,38 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Email"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:inputType="textEmailAddress"/>
         <EditText
             android:id="@+id/act_reg_nameET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:hint="Name"/>
         <EditText
             android:id="@+id/act_reg_phoneET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Phone (+62)"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:hint="Phone"
             android:inputType="number"/>
         <EditText
             android:id="@+id/act_reg_passwordET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
             android:hint="Password"
             android:inputType="textPassword"/>
         <Button
             android:id="@+id/act_reg_regBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="register"/>
+            android:text="register"
+            android:background="@color/colorAccent"/>
     </LinearLayout>
 </RelativeLayout>

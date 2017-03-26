@@ -47,19 +47,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/act_orderDetails_acceptBT"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="accept"
+            android:background="@color/colorAccent"
             android:layout_marginRight="8dp"/>
+
         <Button
             android:id="@+id/act_orderDetails_rejectBT"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="reject"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:layout_marginLeft="8dp"/>
     </LinearLayout>
 </LinearLayout>

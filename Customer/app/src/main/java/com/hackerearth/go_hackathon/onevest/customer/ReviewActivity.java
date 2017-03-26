@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class ReviewActivity extends AppCompatActivity {
 
     private ListView listView;
-    private Button sendBT;
+    private ImageButton sendBT;
     private EditText reviewBoxET;
     private ArrayList<String> arrayList;
     private ArrayAdapter<String> adapter;
@@ -43,7 +44,7 @@ public class ReviewActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference();
         listView = (ListView) findViewById(R.id.act_review_LV);
         reviewBoxET = (EditText) findViewById(R.id.act_review_reviewBox);
-        sendBT = (Button) findViewById(R.id.act_review_sendBT);
+        sendBT = (ImageButton) findViewById(R.id.act_review_sendBT);
 
         arrayList = new ArrayList<>();
         adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrayList);

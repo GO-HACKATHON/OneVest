@@ -4,14 +4,23 @@
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.hackerearth.go_hackathon.onevest.driver.RegisterActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/gojek_putih"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@android:color/white">
 
         <TextView
             android:id="@+id/act_reg_alreadyTV"
@@ -46,19 +55,27 @@
             android:id="@+id/act_reg_emailET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"/>
         <EditText
             android:id="@+id/act_reg_nameET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:hint="Name"/>
+
         <EditText
             android:id="@+id/act_reg_phoneET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Phone (+62)"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:hint="Phone"
             android:inputType="number"/>
+
         <RadioGroup
             android:id="@+id/act_reg_RG"
             android:layout_width="match_parent"
@@ -68,11 +85,15 @@
                 android:id="@+id/act_reg_rideRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
                 android:text="GO-RIDE"
                 android:layout_marginRight="16dp"/>
             <RadioButton
                 android:id="@+id/act_reg_carRB"
                 android:layout_width="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
                 android:text="GO-CAR"/>
         </RadioGroup>
@@ -81,17 +102,23 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Vehicle Number"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:inputType="text"/>
         <EditText
             android:id="@+id/act_reg_passwordET"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Password"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
             android:inputType="textPassword"/>
         <Button
             android:id="@+id/act_reg_regBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="register"/>
+            android:text="register"
+            android:background="@color/colorAccent"/>
     </LinearLayout>
 </RelativeLayout>

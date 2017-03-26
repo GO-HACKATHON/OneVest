@@ -16,23 +16,60 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColorHint="#CFD8DC"
-            android:textColor="#CFD8DC"
+            android:paddingLeft="16dp"
             android:hint="Write a message..."
             android:id="@+id/act_chat_messageBox"
             android:maxHeight="80dp"
             />
-        <Button
+        <ImageButton
             android:id="@+id/act_chat_sendBT"
             android:layout_width="72dp"
             android:layout_height="48dp"
-            android:text="send"/>
+            android:src="@drawable/ic_send"
+            android:background="@android:color/transparent"/>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/top_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageButton
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_call"
+                android:background="@android:color/transparent"
+                android:scaleType="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageButton
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_assignment"
+                android:background="@android:color/transparent"
+                android:scaleType="center"/>
+        </RelativeLayout>
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/act_chat_SV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/top_button"
         android:layout_above="@id/act_chat_messageArea"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
